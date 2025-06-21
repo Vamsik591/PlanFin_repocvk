@@ -1,0 +1,277 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif; /* Slightly more modern font */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top instead of center vertically */
+    min-height: 100vh;
+    background-color: #eef2f5; /* Softer background */
+    margin: 0; /* Remove default body margin */
+    padding: 30px 20px; /* Add some padding around the container */
+    box-sizing: border-box; /* Include padding in element's total width/height */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 35px 40px; /* Increased padding */
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Softer, more pronounced shadow */
+    width: 100%;
+    max-width: 650px; /* Slightly wider container */
+    box-sizing: border-box;
+    margin-top: 30px; /* Space from top */
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px; /* More space below heading */
+    font-size: 2.2em; /* Slightly larger heading */
+    font-weight: 600; /* Medium bold */
+}
+
+p {
+    color: #555; /* Softer text color */
+    line-height: 1.7; /* Increased line height for readability */
+    text-align: center;
+    margin-bottom: 25px; /* More space below paragraphs */
+    font-size: 0.95em;
+}
+
+.input-group {
+    margin-bottom: 25px; /* Consistent spacing between input groups */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px; /* More space below label */
+    font-weight: 600; /* Medium bold */
+    color: #333;
+    font-size: 1.05em; /* Slightly larger label text */
+}
+
+select,
+input[type="number"] {
+    width: 100%; /* Use 100% width and rely on padding */
+    padding: 12px 15px; /* More padding inside inputs */
+    border: 1px solid #dcdcdc; /* Lighter border */
+    border-radius: 8px; /* More rounded inputs */
+    font-size: 1.1em; /* Larger input text */
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+}
+
+select:focus,
+input[type="number"]:focus {
+    border-color: #6cb6eb; /* Highlight on focus */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2); /* Subtle blue glow */
+    outline: none; /* Remove default outline */
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 14px 20px; /* Increased padding */
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px; /* More rounded button */
+    font-size: 1.15em; /* Larger button text */
+    font-weight: 600; /* Medium bold */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Add transform for subtle click effect */
+    margin-top: 30px; /* More space above button */
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:active {
+    transform: translateY(1px); /* Subtle press effect */
+}
+
+.results-section {
+    margin-top: 35px; /* More space above results */
+    padding: 25px; /* More padding inside results */
+    border: 1px solid #cceeff; /* Soft blue border */
+    border-radius: 8px;
+    background-color: #e6f7ff; /* Lighter blue background */
+    min-height: 50px;
+}
+
+.results-section h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px; /* Space below heading */
+    font-size: 1.3em;
+}
+
+.results-section p {
+    text-align: left;
+    margin-bottom: 10px;
+    color: #34495e;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.results-section strong {
+    color: #2e86c1; /* Slightly darker blue for strong text */
+}
+
+.results-section small {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.results-section .potential-value-box { /* Specific style for the value box */
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #d4edda;
+    border-radius: 5px;
+    border: 1px solid #28a745;
+}
+
+.results-section .potential-value-box h4 {
+    margin-top: 0;
+    color: #28a745;
+    font-size: 1.1em;
+}
+
+.results-section .potential-value-box p {
+    font-size: 1.4em; /* Larger for the final amount */
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 5px;
+}
+
+.disclaimer {
+    font-size: 0.8em;
+    color: #7f8c8d;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px; /* Added padding to disclaimer */
+    border-top: 1px dashed #ccc; /* Subtle separator */
+}
+
+.footer {
+    font-size: 0.75em; /* Slightly larger footer */
+    color: #bdc3c7;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* NEW STYLES FOR TABS */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e0e0e0; /* Lighter border for tabs */
+    padding-bottom: 5px; /* Space below tab buttons */
+}
+
+.tab-button {
+    background-color: #f8f8f8; /* Lighter default background */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-bottom: none; /* No bottom border for inactive */
+    padding: 12px 22px; /* Adjusted padding */
+    cursor: pointer;
+    font-size: 1.05em; /* Slightly larger font */
+    border-radius: 8px 8px 0 0; /* More rounded top corners */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin: 0 4px; /* More space between tabs */
+    color: #555;
+}
+
+.tab-button:hover {
+    background-color: #eef2f5; /* Soft hover effect */
+    color: #333;
+}
+
+.tab-button.active {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    border-color: #3498db; /* Active border matches background */
+    border-bottom: 2px solid #3498db; /* Stronger active line */
+    padding-bottom: 12px; /* Adjust padding to make active tab slightly taller */
+    transform: translateY(0px); /* Reset any transform from hover */
+}
+
+.tab-content {
+    display: none;
+    padding-top: 15px; /* Add padding inside content for spacing from tabs */
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Radio button group styling */
+.radio-group {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 15px; /* Slightly less gap */
+    margin-top: 10px;
+    margin-bottom: 10px; /* Added margin for consistency */
+}
+
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 18px; /* More padding */
+    border: 1px solid #dcdcdc; /* Lighter border */
+    border-radius: 8px; /* More rounded */
+    cursor: pointer;
+    background-color: #f8f8f8; /* Lighter background */
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.2s ease;
+    font-weight: normal;
+    color: #555;
+    font-size: 1em;
+}
+
+.radio-group input[type="radio"]:checked + label {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3); /* Subtle glow on active */
+}
+
+.radio-group label:hover {
+    background-color: #eef2f5;
+    border-color: #a3d4f8; /* Lighter hover border */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 20px;
+        padding: 25px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    .tab-button {
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
+    button {
+        font-size: 1em;
+        padding: 12px 15px;
+    }
+    .input-group label {
+        font-size: 1em;
+    }
+    select,
+    input[type="number"] {
+        font-size: 1em;
+    }
+    .radio-group {
+        flex-direction: column; /* Stack radio buttons on small screens */
+        gap: 10px;
+    }
+}

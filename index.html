@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Fund Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1> PlanFin $ Financial Fund Analyzer</h1>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="fundAnalyzer">Fund Analyzer</button>
+            <button class="tab-button" data-tab="futurePlanning">Future Planning</button>
+        </div>
+
+        <div id="fundAnalyzer" class="tab-content active">
+            <p>Answer a few questions to get a personalized investment recommendation and potential future value.</p>
+
+            <div class="input-group">
+                <label for="riskAppetite">1. What is your risk appetite?</label>
+                <select id="riskAppetite">
+                    <option value="">Select your risk appetite</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="investmentYears">2. What is your expected investment time period in years?</label>
+                <input type="number" id="investmentYears" min="1" value="5">
+            </div>
+
+            <div class="input-group">
+                <label for="investmentAmount">3. What is your investment amount? (e.g., ₹ 100,000)</label>
+                <input type="number" id="investmentAmount" min="1000" value="100000">
+            </div>
+
+            <div class="input-group">
+                <label>4. Is this a monthly investment or a lump sum?</label>
+                <div class="radio-group">
+                    <input type="radio" id="lumpSum" name="investmentType" value="lumpSum" checked>
+                    <label for="lumpSum">Lump Sum</label>
+                    <input type="radio" id="monthly" name="investmentType" value="monthly">
+                    <label for="monthly">Monthly</label>
+                </div>
+            </div>
+
+            <button id="getRecommendationBtn">Get My Recommendation</button>
+
+            <div id="results" class="results-section">
+                </div>
+        </div>
+
+        <div id="futurePlanning" class="tab-content">
+            <p>Plan for your future financial goals like education, marriage, or buying a home.</p>
+
+            <div class="input-group">
+                <label for="goalSelect">1. Select your Financial Goal:</label>
+                <select id="goalSelect">
+                    <option value="">Select a goal</option>
+                    <option value="bike_car">Bike/Car Buying</option>
+                    <option value="medical_emergency">Medical Emergency Fund</option>
+                    <option value="marriage">Marriage Fund</option>
+                    <option value="house">House Building/Buying Fund</option>
+                    <option value="education">Education Fund</option>
+                    <option value="tour">Tour (Foreign or Pan-India Fund)</option>
+                    <option value="business">Business Fund (Future Venture)</option>
+                    <option value="normal_emergency">Normal Emergency Fund (Others)</option>
+                </select>
+            </div>
+
+            <div class="input-group" id="subOptionsContainer" style="display: none;">
+                <label for="subOptionSelect">Select Specific Type:</label>
+                <select id="subOptionSelect">
+                    </select>
+            </div>
+
+            <div class="input-group">
+                <label for="goalYears">2. Years until you need the fund:</label>
+                <input type="number" id="goalYears" min="1" value="10">
+            </div>
+
+            <div class="input-group">
+                <label for="goalRiskAppetite">3. What is your risk appetite for this goal?</label>
+                <select id="goalRiskAppetite">
+                    <option value="">Select your risk appetite</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <button id="calculateGoalBtn">Calculate My Goal</button>
+
+            <div id="goalResults" class="results-section">
+                </div>
+
+            <div class="input-group" id="canSaveAmountGroup" style="display: none;">
+                <label for="canSaveAmount">If the above is too much, how much can you save per month/lump sum?</label>
+                <input type="number" id="canSaveAmount" min="1000" value="5000">
+                <div class="radio-group">
+                    <input type="radio" id="canSaveLumpSum" name="canSaveType" value="lumpSum" checked>
+                    <label for="canSaveLumpSum">Lump Sum</label>
+                    <input type="radio" id="canSaveMonthly" name="canSaveType" value="monthly">
+                    <label for="canSaveMonthly">Monthly</label>
+                </div>
+                <button id="recalculateGoalBtn">Recalculate Based on My Savings</button>
+            </div>
+        </div>
+
+        <p class="disclaimer">
+            <b>Disclaimer:</b> This is a simplified recommendation based on general financial principles
+            and assumed average returns. It is for illustrative purposes only and should not be considered
+            professional financial advice. Investment values can fluctuate and past performance is not
+            indicative of future results. Always consult with a qualified financial advisor before
+            making investment decisions.
+        </p>
+
+        <p class="footer">Built with ❤️ using HTML, CSS, and JavaScript</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
