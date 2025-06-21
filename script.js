@@ -1,5 +1,4 @@
-// --- Global Constants and Assumed Returns ---
-// Define the assumed inflation rate (6.5% average annual inflation)
+
 const INFLATION_RATE = 0.065;
 
 const ASSUMED_RETURNS = {
@@ -14,7 +13,7 @@ const ASSUMED_RETURNS = {
     'ultra_high_growth': 20.0
 };
 
-// --- Goal Definitions with Sub-Options ---
+
 const GOAL_DEFINITIONS = {
     'bike_car': {
         label: 'Bike/Car Buying',
@@ -83,9 +82,7 @@ const GOAL_DEFINITIONS = {
 };
 
 
-// --- Helper Functions ---
 
-// Categorizes years into predefined time periods for recommendations
 function categorizeTimePeriod(years) {
     if (years <= 3) return 'short';
     if (years > 3 && years <= 5) return 'medium';
@@ -115,7 +112,7 @@ function getAssumedReturnForGoal(riskAppetite, years) {
     return ASSUMED_RETURNS['fd'];
 }
 
-// Gives a general investment recommendation text based on risk and years
+
 function getGeneralInvestmentRecommendation(riskAppetite, years) {
     let recommendationText = "";
     const timeCategory = categorizeTimePeriod(years);
@@ -152,14 +149,12 @@ function calculateRealValue(nominalFutureValue, years, inflationRate) {
     return nominalFutureValue / Math.pow((1 + inflationRate), years);
 }
 
-// --- Financial Calculation Functions ---
 
-// Calculates Future Value of a Lump Sum
 function calculateFutureValueLumpSum(principal, annualRate, years) {
     return principal * Math.pow((1 + annualRate), years);
 }
 
-// Calculates Future Value of Monthly SIP (Annuity Due - payment at beginning of period)
+
 function calculateFutureValueMonthlySIP(monthlyPayment, annualRate, years) {
     const monthlyRate = annualRate / 12;
     const numberOfMonths = years * 12;
@@ -167,13 +162,13 @@ function calculateFutureValueMonthlySIP(monthlyPayment, annualRate, years) {
     return monthlyPayment * ((Math.pow((1 + monthlyRate), numberOfMonths) - 1) / monthlyRate) * (1 + monthlyRate);
 }
 
-// Calculates Required Lump Sum (Present Value) for a Future Target
+
 function calculateRequiredLumpSum(futureValue, annualRate, years) {
     if (years === 0) return futureValue;
     return futureValue / Math.pow((1 + annualRate), years);
 }
 
-// Calculates Required Monthly SIP for a Future Target (Reverse of Annuity Due)
+
 function calculateRequiredMonthlySIP(futureValue, annualRate, years) {
     const monthlyRate = annualRate / 12;
     const numberOfMonths = years * 12;
@@ -193,7 +188,7 @@ function calculateRequiredMonthlySIP(futureValue, annualRate, years) {
 const tabButtons = document.querySelectorAll('.tab-button');
 const tabContents = document.querySelectorAll('.tab-content');
 
-// Fund Analyzer Elements
+
 const riskAppetiteSelect = document.getElementById('riskAppetite');
 const investmentYearsInput = document.getElementById('investmentYears');
 const investmentAmountInput = document.getElementById('investmentAmount');
@@ -214,9 +209,7 @@ const canSaveAmountInput = document.getElementById('canSaveAmount');
 const canSaveTypeRadios = document.querySelectorAll('input[name="canSaveType"]');
 const recalculateGoalBtn = document.getElementById('recalculateGoalBtn');
 
-// --- Event Listeners ---
 
-// Tab Switching Logic
 tabButtons.forEach(button => {
     button.addEventListener('click', () => {
         tabButtons.forEach(btn => btn.classList.remove('active'));
@@ -227,7 +220,7 @@ tabButtons.forEach(button => {
     });
 });
 
-// --- Fund Analyzer Logic ---
+
 getRecommendationBtn.addEventListener('click', function() {
     const selectedRisk = riskAppetiteSelect.value;
     const inputYears = parseInt(investmentYearsInput.value);
@@ -241,7 +234,7 @@ getRecommendationBtn.addEventListener('click', function() {
         }
     }
 
-    // Input validation
+    
     if (!selectedRisk || selectedRisk === "" || isNaN(inputYears) || inputYears < 1 || isNaN(investmentAmount) || investmentAmount < 1000 || !selectedFrequency) {
         resultsDiv.innerHTML = '<p style="color: red;">Please select your risk appetite, enter a valid investment period (at least 1 year), investment frequency, and enter a valid amount (at least ₹ 1,000).</p>';
         resultsDiv.style.borderColor = 'red';
@@ -268,7 +261,6 @@ getRecommendationBtn.addEventListener('click', function() {
             calculationText = `(Investing ₹ ${investmentAmount.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})} per month)`;
         }
 
-        // Calculate inflation-adjusted real value
         const realFutureValue = calculateRealValue(futureValue, inputYears, INFLATION_RATE);
 
         resultsHTML += `<div class="potential-value-box">
