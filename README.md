@@ -27,3 +27,13 @@ Add ML-based recommendation model
 Portfolio diversification suggestions
 
 Real-time market data integration
+## Screenshots
+
+### Future Planning – Low Risk
+![Low Risk](planfin-future-planning-lowrisk.png.jpg)
+
+### Future Planning – Medium Risk
+![Medium Risk](planfin-future-planning-Medium.png.jpg)
+
+### Fund Analyzer Recommendation
+![Fund Analyzer](planfin-fundanalyzer.png.jpg)
