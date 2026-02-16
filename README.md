@@ -20,7 +20,7 @@ CSS
 
 JavaScript
 
-Future Improvements
+Future Improvements..
 
 Add ML-based recommendation model
 
