@@ -36,4 +36,4 @@ Real-time market data integration
 ![Medium Risk](planfin-future-planning-Medium.png.jpg)
 
 ### Fund Analyzer Recommendation
-![Fund Analyzer](planfin-fundanalyzer.png.jpg)
+![Fund Analyzer]((planfin-fundanalyzer.png).jpg)
